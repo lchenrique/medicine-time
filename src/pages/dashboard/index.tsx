@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { PageHeader } from "@/components/page-header";
 import { Container } from "@/layout/container";
 import "./style.css"
 import { StatsGroup } from "./comps/stats-group";

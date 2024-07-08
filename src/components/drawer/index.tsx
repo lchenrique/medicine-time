@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 import { DialogProps } from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
-import { ScrollArea } from "../ui/scroll-area";
 
 export interface IDrawerProps extends DialogProps {
   title: ReactNode,
