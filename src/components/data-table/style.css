@@ -1,0 +1,28 @@
+
+table {
+  border-collapse: collapse;
+}
+
+.fixed-right {
+  /* box-shadow: 11px 20px 20px 0px rgba(5, 28, 41, 0.562); */
+  right: 0;
+  z-index: 1;
+  position: sticky;
+  @apply group-hover/table-row:bg-muted transition-all shadow-[11px_20px_20px_0px] shadow-black
+}
+
+
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+td{
+  @apply border-b
+}
+
+tr td:last-child{
+  position: sticky;
+  left:0;
+} 

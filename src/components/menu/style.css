@@ -1,0 +1,35 @@
+
+.menu{
+  @apply hidden md:flex
+}
+ul .menu-item {
+  background: transparent; /* Defina um fundo transparente para todos os elementos */
+}
+
+
+ul:hover .menu-item:not(:hover):not(.menu-item-active, .menu-item[data-disabled="true"]) {
+  /* transform: scale(0.94); */
+  @apply text-foreground/50
+}
+
+
+.menu-item {
+  @apply  transition-all  border-b-2 border-transparent h-full flex items-center  cursor-pointer
+}
+
+.menu-item[data-disabled="true"] {
+  @apply text-foreground/10 cursor-not-allowed
+}
+
+
+.menu-item:hover:not(.menu-item-active, .menu-item[data-disabled="true"])  {
+  @apply text-foreground
+}
+
+.menu-item-active {
+  @apply text-primary dark:text-primary-foreground 
+}
+
+
+
+
