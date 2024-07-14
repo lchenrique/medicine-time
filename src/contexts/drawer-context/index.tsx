@@ -35,7 +35,7 @@ const DrawerProvider = () => {
       <MagicPanel.Header className="text-foreground">{drawer?.title}</MagicPanel.Header>
       <MagicPanel.Overlay className="bg-black/20 backdrop-blur-sm" onClose={() =>  close && close()} />
       {drawer?.content}
-      <MagicPanel.Close className="cursor-pointer" onClose={() =>  close && close()} />
+      <MagicPanel.Close className="cursor-pointer close:bg-foreground" onClose={() =>  close && close()} />
 
     </MagicPanel>
   );
