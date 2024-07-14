@@ -23,9 +23,9 @@ const PatientsForm = ({ patient }: IPatientsFormProps) => {
   ];
 
   return (
-    <ScrollArea className="h-[calc(100%-100px)] w-full rounded-md px-2">
+    <ScrollArea className="h-[calc(100%-100px)] w-full rounded-md ">
 
-      <div className="grid gap-4 px-4" >
+      <div className="grid gap-4 px-2" >
         {formData.map(({ id, label, value, type, min }) => {
           return <div className="grid grid-cols-1 items-center gap-4">
             <Label htmlFor={id} >
