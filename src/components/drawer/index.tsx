@@ -9,7 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import { DialogProps } from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import { MagicPanel } from "magic-panel";
 
 export interface IDrawerProps extends DialogProps {
