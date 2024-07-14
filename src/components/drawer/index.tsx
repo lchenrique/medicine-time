@@ -5,40 +5,52 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { DialogProps } from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
+import { MagicPanel } from "magic-panel";
 
 export interface IDrawerProps extends DialogProps {
-  title: ReactNode,
+  title: ReactNode;
   open: boolean;
-  children?: ReactNode
-
+  children?: ReactNode;
 }
 
-const Drawer = ({ children, open: openDrawer, onOpenChange, title }: IDrawerProps) => {
-  const [open, setOpen] = useState(openDrawer)
+const Drawer = ({
+  children,
+  open: openDrawer,
+  onOpenChange,
+  title,
+}: IDrawerProps) => {
+  const [open, setOpen] = useState(openDrawer);
 
-  useEffect(() => {
-    setOpen(openDrawer)
+  // useEffect(() => {
+  //   setOpen(openDrawer);
 
-    return () => {
-      setOpen(false)
-    }
-  }, [openDrawer])
+  //   return () => {
+  //     setOpen(false);
+  //   };
+  // }, [openDrawer]);
 
   const onChange = (isOpen: boolean) => {
-    onOpenChange && onOpenChange(isOpen)
-    setOpen(isOpen)
-  }
-
+    onOpenChange && onOpenChange(isOpen);
+    setOpen(isOpen);
+  };
 
   return (
-    <Sheet open={open} onOpenChange={onChange} >
-      <SheetContent  >
-        {open &&
+    <>
+      <MagicPanel drawer placement="right" open={openDrawer} onChange={onChange}>
+        {children}
+      </MagicPanel>
+    </>
+  );
+
+  return (
+    <Sheet open={open} onOpenChange={onChange}>
+      <SheetContent>
+        {open && (
           <SheetClose
             className={cn(
               "fill-auxiliary absolute",
@@ -46,21 +58,19 @@ const Drawer = ({ children, open: openDrawer, onOpenChange, title }: IDrawerProp
               "focus:outline-none focus:ring-2",
               "focus:ring-ring focus:ring-offset-2",
               "disabled:pointer-events-none"
-            )} >
+            )}
+          >
             <X />
           </SheetClose>
-        }
+        )}
         <SheetHeader className=" p-6">
           <SheetTitle>{title}</SheetTitle>
-          <SheetDescription >
-          </SheetDescription>
+          <SheetDescription></SheetDescription>
         </SheetHeader>
-       
-          {children}
 
+        {children}
       </SheetContent>
     </Sheet>
-
   );
 };
 

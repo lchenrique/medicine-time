@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
+
 import './index.css'
+
 import { DrawerProvider } from './contexts/drawer-context/index.tsx'
 import { ThemeProvider } from './contexts/theme-context/index.tsx'
 
